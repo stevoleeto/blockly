@@ -128,7 +128,7 @@ Blockly.Python.finish = function(code) {
       definitions.push(def);
     }
   }
-  var allDefs = imports.join('\n') + '\n\n' + definitions.join('\n\n');
+  var allDefs = 'import mcpi.minecraft as minecraft\nimport mcpi.block as block\n\n' + imports.join('\n') + '\n\n' + definitions.join('\n\n') + '\n\nmc = minecraft.Minecraft.create()\n' + '\n\n';
   return allDefs.replace(/\n\n+/g, '\n\n').replace(/\n*$/, '\n\n\n') + code;
 };
 
